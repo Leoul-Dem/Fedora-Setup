@@ -146,11 +146,6 @@ source ~/.bashrc
 # vlc install
 sudo dnf install -y vlc
 
-# vscode install and config
-sudo flatpak install -y flathub com.visualstudio.code
-echo "alias code='flatpak run com.visualstudio.code'" >> ~/.bashrc
-source ~/.bashrc
-
 # wl-clipboard install
 sudo dnf install -y wl-clipboard
 
