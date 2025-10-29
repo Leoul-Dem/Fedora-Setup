@@ -1,5 +1,12 @@
 #!/bin/bash
 
+sudo dnf update -y
+
+echo "Enter Git Name: "
+read name
+echo "Enter Git Email: "
+read email
+
 # snap install
 sudo dnf install -y snapd
 sudo mkdir -p /snap
@@ -59,7 +66,7 @@ sudo dnf install -y \
   openssl-devel readline-devel zlib-devel libyaml-devel ncurses-devel libffi-devel gdbm-devel jemalloc jemalloc-devel \
   vips vips-devel ImageMagick ImageMagick-devel mupdf mupdf-libs
 
-# mise install 
+# mise install
 curl https://mise.run | sh
 ~/.local/bin/mise --version
 
@@ -76,8 +83,8 @@ git config --global alias.br branch
 git config --global alias.ci commit
 git config --global alias.st status
 git config --global pull.rebase true
-git config --global user.name "Leoul-Dem"
-git config --global user.email "lgd226@lehigh.edu"
+git config --global user.name "$name"
+git config --global user.email "$email"
 
 # install tldr
 pipx install tldr
@@ -155,7 +162,7 @@ sudo flatpak install -y flathub com.discordapp.Discord
 echo "alias discord='flatpak run com.discordapp.Discord'" >> ~/.bashrc
 source ~/.bashrc
 
-# spotify install 
+# spotify install
 sudo flatpak install -y flathub com.spotify.Client
 echo "alias spotify='flatpak run com.spotify.Client'" >> ~/.bashrc
 source ~/.bashrc
